@@ -46,8 +46,8 @@ function ClangFormat()
 endfunction
 augroup cpp-clangformat
   autocmd!
-  autocmd FileType c,cpp,objc map <C-K> :call ClangFormat()<CR>
-  autocmd FileType c,cpp,objc imap <C-K> <c-o>:call ClangFormat()<CR>
+  autocmd FileType c,cpp,objc map <C-f> :call ClangFormat()<CR>
+  autocmd FileType c,cpp,objc imap <C-f> <c-o>:call ClangFormat()<CR>
 augroup END
 
 function ClangFormatOnSave()
@@ -78,8 +78,8 @@ function SwiftIndent()
     pyf ~/.vim/swift-format.py
   endif
 endfunction
-autocmd FileType swift map <C-K> :call SwiftIndent()<CR>
-autocmd FileType swift imap <C-K> <c-o>:call SwiftIndent()<CR>
+autocmd FileType swift map <C-f> :call SwiftIndent()<CR>
+autocmd FileType swift imap <C-f> <c-o>:call SwiftIndent()<CR>
 
 " Go
 let g:go_fmt_command = "goimports"
@@ -108,3 +108,22 @@ filetype plugin indent on
 NeoBundleCheck
 
 let g:airline_powerline_fonts = 1
+
+" neosnippet
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+"
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
