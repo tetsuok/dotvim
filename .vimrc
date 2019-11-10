@@ -46,8 +46,8 @@ function ClangFormat()
 endfunction
 augroup cpp-clangformat
   autocmd!
-  autocmd FileType c,cpp,objc map <C-f> :call ClangFormat()<CR>
-  autocmd FileType c,cpp,objc imap <C-f> <c-o>:call ClangFormat()<CR>
+  autocmd FileType c,cpp,objc map <C-a> :call ClangFormat()<CR>
+  autocmd FileType c,cpp,objc imap <C-a> <c-o>:call ClangFormat()<CR>
 augroup END
 
 function ClangFormatOnSave()
@@ -78,8 +78,8 @@ function SwiftIndent()
     pyf ~/.vim/swift-format.py
   endif
 endfunction
-autocmd FileType swift map <C-f> :call SwiftIndent()<CR>
-autocmd FileType swift imap <C-f> <c-o>:call SwiftIndent()<CR>
+autocmd FileType swift map <C-a> :call SwiftIndent()<CR>
+autocmd FileType swift imap <C-a> <c-o>:call SwiftIndent()<CR>
 
 " Go
 let g:go_fmt_command = "goimports"
