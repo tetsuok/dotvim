@@ -80,6 +80,9 @@ function SwiftIndent()
 endfunction
 autocmd FileType swift map <C-a> :call SwiftIndent()<CR>
 autocmd FileType swift imap <C-a> <c-o>:call SwiftIndent()<CR>
+autocmd FileType python noremap <C-a> :call Autopep8()<CR>
+
+let g:autopep8_disable_show_diff=1
 
 " Go
 let g:go_fmt_command = "goimports"
