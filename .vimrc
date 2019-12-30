@@ -60,7 +60,7 @@ function ClangFormatOnSave()
     endif
   endif
 endfunction
-autocmd BufWritePre *.h,*.cc,*.cpp call ClangFormatOnSave()
+autocmd BufWrite,FileWritePre,FileAppendPre *.h,*.cc,*.cpp call ClangFormatOnSave()
 
 " Swift
 au BufNewFile,BufRead *.swift setf swift
