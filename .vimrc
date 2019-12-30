@@ -28,7 +28,7 @@ filetype plugin indent on
 " Make ctags behave like GNU Global
 nnoremap <C-j> <C-]>
 nnoremap <C-]> g<C-]>
-nnoremap <C-o> <C-t>
+"nnoremap <C-o> <C-t>
 
 " Git
 au BufNewFile,BufRead *.git/COMMIT_EDITMSG setlocal spell spelllang=en_us
