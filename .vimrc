@@ -44,10 +44,14 @@ function ClangFormat()
     endif
   endif
 endfunction
+
+let g:clang_format_fallback_style="Google"
 augroup cpp-clangformat
   autocmd!
   autocmd FileType c,cpp,objc map <C-a> :call ClangFormat()<CR>
   autocmd FileType c,cpp,objc imap <C-a> <c-o>:call ClangFormat()<CR>
+  autocmd FileType c,cpp,objc map <C-I> :py3f /usr/local/share/clang/clang-format.py<cr>
+  autocmd FileType c,cpp,objc imap <C-I> <c-o>:py3f /usr/local/share/clang/clang-format.py<cr>
 augroup END
 
 function ClangFormatOnSave()
