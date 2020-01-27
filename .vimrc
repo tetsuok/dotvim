@@ -110,6 +110,8 @@ NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 NeoBundle 'tell-k/vim-autopep8'
 NeoBundle 'fatih/vim-go'
 NeoBundle 'cohama/lexima.vim'
+NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
+NeoBundle 'junegunn/fzf.vim'
 call neobundle#end()
 filetype plugin indent on
 NeoBundleCheck
@@ -135,3 +137,14 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 if has('conceal')
   set conceallevel=2 concealcursor=niv
 endif
+
+let mapleader = ","
+let maplocalleader = ","
+
+" fzf
+set rtp+=~/.fzf/bin/fzf
+set rtp+=~/.fzf
+nmap ; :Buffers<CR>
+nmap <Leader>r :Tags<CR>
+nmap <Leader>t :Files<CR>
+let g:fzf_buffers_jump = 1
