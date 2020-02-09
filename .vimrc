@@ -40,7 +40,7 @@ function ClangFormat()
     if has('python3')
       py3f /usr/local/share/clang/clang-format.py
     else
-      pyf /usr/local/share/clang/clang-format.py
+      pyf /usr/share/clang/clang-format.py
     endif
   endif
 endfunction
