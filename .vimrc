@@ -40,7 +40,7 @@ function ClangFormat()
     if has('python3')
       py3f /usr/local/share/clang/clang-format.py
     else
-      pyf /usr/share/clang/clang-format.py
+      pyf /usr/share/clang/clang-format/clang-format.py
     endif
   endif
 endfunction
@@ -50,8 +50,8 @@ augroup cpp-clangformat
   autocmd!
   autocmd FileType c,cpp,objc map <C-a> :call ClangFormat()<CR>
   autocmd FileType c,cpp,objc imap <C-a> <c-o>:call ClangFormat()<CR>
-  autocmd FileType c,cpp,objc map <C-I> :py3f /usr/local/share/clang/clang-format.py<cr>
-  autocmd FileType c,cpp,objc imap <C-I> <c-o>:py3f /usr/local/share/clang/clang-format.py<cr>
+  autocmd FileType c,cpp,objc map <C-I> :py3f /usr/share/clang/clang-format/clang-format.py<cr>
+  autocmd FileType c,cpp,objc imap <C-I> <c-o>:py3f /usr/share/clang/clang-format/clang-format.py<cr>
 augroup END
 
 function ClangFormatOnSave()
@@ -60,7 +60,7 @@ function ClangFormatOnSave()
     if has('python3')
       py3f /usr/local/share/clang/clang-format.py
     else
-      pyf /usr/local/share/clang/clang-format.py
+      pyf /usr/share/clang/clang-format/clang-format.py
     endif
   endif
 endfunction
