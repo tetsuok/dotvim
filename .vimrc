@@ -89,7 +89,8 @@ function SwiftIndent()
 endfunction
 autocmd FileType swift map <C-a> :call SwiftIndent()<CR>
 autocmd FileType swift imap <C-a> <c-o>:call SwiftIndent()<CR>
-autocmd FileType python noremap <C-a> :call Autopep8()<CR>
+autocmd FileType python noremap <C-a> :call yapf#YAPF()<CR>
+autocmd FileType python imap <C-a> <c-o>:call yapf#YAPF()<CR>
 
 let g:autopep8_disable_show_diff=1
 
@@ -153,3 +154,7 @@ nmap ; :Buffers<CR>
 nmap <Leader>r :Tags<CR>
 nmap <Leader>t :Files<CR>
 let g:fzf_buffers_jump = 1
+
+call plug#begin()
+Plug 'google/yapf', { 'rtp': 'plugins/vim', 'for': 'python' }
+call plug#end()
