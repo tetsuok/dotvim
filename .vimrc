@@ -48,8 +48,8 @@ endfunction
 let g:clang_format_fallback_style="Google"
 augroup cpp-clangformat
   autocmd!
-  autocmd FileType c,cpp,objc map <C-a> :call ClangFormat()<CR>
-  autocmd FileType c,cpp,objc imap <C-a> <c-o>:call ClangFormat()<CR>
+  autocmd FileType c,cpp,objc map <C-y> :call ClangFormat()<CR>
+  autocmd FileType c,cpp,objc imap <C-y> <c-o>:call ClangFormat()<CR>
   if has('mac')
     autocmd FileType c,cpp,objc map <C-I> :py3f /usr/local/share/clang/clang-format.py<cr>
     autocmd FileType c,cpp,objc imap <C-I> <c-o>:py3f /usr/local/share/clang/clang-format.py<cr>
@@ -87,10 +87,10 @@ function SwiftIndent()
     pyf ~/.vim/swift-format.py
   endif
 endfunction
-autocmd FileType swift map <C-a> :call SwiftIndent()<CR>
-autocmd FileType swift imap <C-a> <c-o>:call SwiftIndent()<CR>
-autocmd FileType python noremap <C-a> :call yapf#YAPF()<CR>
-autocmd FileType python imap <C-a> <c-o>:call yapf#YAPF()<CR>
+autocmd FileType swift map <C-y> :call SwiftIndent()<CR>
+autocmd FileType swift imap <C-y> <c-o>:call SwiftIndent()<CR>
+autocmd FileType python noremap <C-y> :call yapf#YAPF()<CR>
+autocmd FileType python imap <C-y> <c-o>:call yapf#YAPF()<CR>
 
 let g:autopep8_disable_show_diff=1
 
