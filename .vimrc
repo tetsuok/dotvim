@@ -38,9 +38,9 @@ function ClangFormat()
   let g:clang_format_fallback_style="Google"
   if has('mac')
     if has('python3')
-      py3f /usr/local/share/clang/clang-format.py
+      py3f ~/bin/clang-format.py
     else
-      pyf /usr/share/clang/clang-format/clang-format.py
+      pyf ~/bin/clang-format.py
     endif
   endif
 endfunction
@@ -51,8 +51,8 @@ augroup cpp-clangformat
   autocmd FileType c,cpp,objc map <C-y> :call ClangFormat()<CR>
   autocmd FileType c,cpp,objc imap <C-y> <c-o>:call ClangFormat()<CR>
   if has('mac')
-    autocmd FileType c,cpp,objc map <C-I> :py3f /usr/local/share/clang/clang-format.py<cr>
-    autocmd FileType c,cpp,objc imap <C-I> <c-o>:py3f /usr/local/share/clang/clang-format.py<cr>
+    autocmd FileType c,cpp,objc map <C-I> :py3f ~/bin/clang-format.py<cr>
+    autocmd FileType c,cpp,objc imap <C-I> <c-o>:py3f ~/bin/clang-format.py<cr>
   else
     autocmd FileType c,cpp,objc map <C-I> :py3f /usr/share/clang/clang-format/clang-format.py<cr>
     autocmd FileType c,cpp,objc imap <C-I> <c-o>:py3f /usr/share/clang/clang-format/clang-format.py<cr>
@@ -63,9 +63,9 @@ function ClangFormatOnSave()
   let l:formatdiff = 1
   if has('mac')
     if has('python3')
-      py3f /usr/local/share/clang/clang-format.py
+      py3f ~/bin/clang-format.py
     else
-      pyf /usr/share/clang/clang-format/clang-format.py
+      pyf ~/bin/clang-format.py
     endif
   endif
 endfunction
