@@ -21,7 +21,6 @@ hi StatusLine term=none cterm=none ctermfg=white ctermbg=darkgrey
 hi Search term=none cterm=none ctermfg=white ctermbg=darkgreen
 hi Pmenu ctermbg=white ctermfg=black
 hi PmenuSel ctermbg=gray ctermfg=black
-colorscheme jellybeans
 
 filetype plugin indent on
 
@@ -97,30 +96,6 @@ let g:autopep8_disable_show_diff=1
 " Go
 let g:go_fmt_command = "goimports"
 
-" NeoBundle
-if &compatible
-  set nocompatible " Be iMproved
-endif
-set rtp^=~/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand('~/.vim/bundle'))
-NeoBundleFetch 'Shougo/neobundle.vim'
-NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'vim-airline/vim-airline'
-NeoBundle 'vim-airline/vim-airline-themes'
-NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
-NeoBundle 'tell-k/vim-autopep8'
-NeoBundle 'fatih/vim-go'
-NeoBundle 'cohama/lexima.vim'
-NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'  }
-NeoBundle 'junegunn/fzf.vim'
-call neobundle#end()
-filetype plugin indent on
-NeoBundleCheck
 
 let g:airline_powerline_fonts = 1
 
