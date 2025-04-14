@@ -12,7 +12,6 @@ set statusline=%F%r%h%=
 set autochdir
 set visualbell t_vb=
 set listchars=trail:~
-set cursorline
 
 hi Comment ctermfg=grey guifg=grey20
 hi MatchParen term=standout ctermbg=LightGrey ctermfg=Black guibg=LightGrey guifg=Black
